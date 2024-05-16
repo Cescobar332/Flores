@@ -32,7 +32,6 @@ import streamlit as st
 import tensorflow as tf # TensorFlow is required for Keras to work
 from PIL import Image
 import numpy as np
-#import cv2
 
 # hide deprication warnings which directly don't affect the working of the application
 import warnings
@@ -66,12 +65,12 @@ with st.spinner('Modelo está cargando..'):
 
 
 with st.sidebar:
-        st.image('rosa.jpg')
+        st.image('rosa.jpeg')
         st.title("Reconocimiento de imagen")
         st.subheader("Reconocimiento de imagen para flores")
 
-st.image('logo.png')
-st.title("Smart Regions Center")
+#st.image('logo.png')
+st.title("Modelo de reconocimiento de Flores")
 st.write("Somos un equipo apasionado de profesionales dedicados a hacer la diferencia")
 st.write("""
          # Detección de flores
