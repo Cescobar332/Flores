@@ -40,7 +40,7 @@ warnings.filterwarnings("ignore")
 # set some pre-defined configurations for the page, such as the page title, logo-icon, page loading state (whether the page is loaded automatically or you need to perform some action for loading)
 st.set_page_config(
     page_title="Reconocimiento de Flores",
-    page_icon = ":smile:",
+    page_icon = ":angry:",
     initial_sidebar_state = 'auto'
 )
 
@@ -67,7 +67,16 @@ with st.spinner('Modelo está cargando..'):
 with st.sidebar:
         st.image('rosa.jpeg')
         st.title("Reconocimiento de imagen")
+        st.header("By Carlos Escobar")
         st.subheader("Reconocimiento de imagen para flores")
+        st.text("Bami bami te bamoooooo")
+        st.write("UNAB")
+        confianza = st.slider("Seleccione el nivel de confianza %", 0, 100, 50)/100
+
+col1, col2, col3 = st.columns(3)
+
+with col2:
+     st.image('rosa.jpeg')
 
 #st.image('logo.png')
 st.title("Modelo de reconocimiento de Flores")
@@ -77,8 +86,7 @@ st.write("""
          """
          )
 
-
-def import_and_predict(image_data, model, class_names):
+def predict(image_data, model, class_names):
     
     image_data = image_data.resize((180, 180))
     
@@ -105,7 +113,7 @@ else:
     st.image(image, use_column_width=True)
     
     # Realizar la predicción
-    class_name, score = import_and_predict(image, model, class_names)
+    class_name, score = predict(image, model, class_names)
     
     # Mostrar el resultado
 
